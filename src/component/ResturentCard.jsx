@@ -1,6 +1,6 @@
 import { useContext } from "react";
-import { CDN_URL } from "../Utils/contants.js";
-import UserContext from "../Utils/UserContext.js";
+import { CDN_URL } from "../Utils/contants.jsx";
+import UserContext from "../Utils/UserContext.jsx";
 
 const ResturentCard = ({ resData }) => {
 

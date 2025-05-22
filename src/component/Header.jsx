@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { FaShoppingCart } from "react-icons/fa"; // Cart Icon
-import useOnlineStatus from "../Utils/useOnlineStatus.js";
-import UserContext from "../Utils/UserContext.js";
+import useOnlineStatus from "../Utils/useOnlineStatus";
+import UserContext from "../Utils/UserContext";
 import { useSelector } from "react-redux";
-import { LOGO_URL } from "../Utils/contants.js";
+import { LOGO_URL } from "../Utils/contants";
 import { useContext } from "react";
 
 const Header = () => {
