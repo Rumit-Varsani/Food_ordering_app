@@ -3,26 +3,27 @@ import { useState, useEffect } from "react";
 
 const useResturantMenu = (resId) => {
   const [resinfo, setResinfo] = useState(null);
-  const [loading, setLoading] = useState(true); // Track loading state
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const loadMockMenu = async () => {
+    const loadData = async () => {
       try {
-        const data = await import(`../Mocks/useresmenu_${resId}.json`);
-        setResinfo(data.default); // `import()` returns a module object
-        setLoading(false);
+        setLoading(true);
+        const module = await import(`../Mocks/useresmenu_${resId}.json`);
+        setResinfo(module.default);
       } catch (err) {
-        console.error("Mock file not found for resId:", resId);
+        console.error("Mock not found for resId:", resId);
+        setResinfo(null);
+      } finally {
         setLoading(false);
       }
     };
 
-    if (resId) {
-      loadMockMenu();
-    }
+    if (resId) loadData();
   }, [resId]);
 
   return { resinfo, loading };
 };
+
 
 export default useResturantMenu;
