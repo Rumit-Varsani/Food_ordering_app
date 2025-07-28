@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import reshomepagemenu from "../mocks/reshomepagemenu.json";
+import reshomepagemenu from "../Mocks/reshomepagemenu.json";
 
 const useRestroCard = () => {
   const [filteredResturant, setFilteredResturant] = useState([]);
